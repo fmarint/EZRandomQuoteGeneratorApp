@@ -3,32 +3,74 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RandomQuoteGenerator.MainPage">
 
-   <ScrollView >
-      <Grid BackgroundColor="Black">
-         <Grid.Background>
-            <LinearGradientBrush EndPoint="1,1" StartPoint="2,0" >
-               <GradientStopCollection>
-                  <GradientStop Offset="0" Color="blue"  />
-                  <GradientStop Offset="1" Color="LightGreen"  />
-               </GradientStopCollection>
-            </LinearGradientBrush>
-         </Grid.Background>
-         <Grid Margin="25" RowDefinitions="0.8*,0.2*" >
-            <Label
-            FontSize="35"
-            HorizontalTextAlignment="Center"
-            TextColor="White"
-            FontFamily="PacificoRegular"
-            VerticalOptions="Center"
-            Text="when you don’t create things, you become defined by your tastes rather than ability. your tastes only narrow  exclude people. so create. - Why The Lucky Stiff"
+
+   <Grid x:Name="gridBackGround">
+      <Grid.Background>
+         <LinearGradientBrush EndPoint="1,1">
+            <GradientStopCollection>
+               <GradientStop Offset="0.0" Color="blue"  />
+               <GradientStop Offset="0.25" Color="LightGreen"  />
+               <GradientStop Offset="0.50" Color="red"  />
+               <GradientStop Offset="0.75" Color="White"  />
+               <GradientStop Offset="1" Color="Orange"  />
+            </GradientStopCollection>
+         </LinearGradientBrush>
+      </Grid.Background>
+
+
+      <Grid >
+         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+         </Grid.RowDefinitions>
+         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.8*" />
+            <ColumnDefinition Width="0.2*" />
+
+         </Grid.ColumnDefinitions>
+         <ScrollView Grid.Row="0" 
+                     Grid.ColumnSpan="2"
+                     Grid.Column="0" >
+            <Label Margin="15,0,15,0"
+               FontSize="35"
+               HorizontalTextAlignment="Center"
+               TextColor="White"
+               FontFamily="PacificoRegular"
+               VerticalOptions="Center"
+               x:Name="lblMessage"
+               Text="when you don’t create things, you become defined by your tastes rather than ability. your tastes only narrow  exclude people. so create. - Why The Lucky Stiff"
             />
-            <Button Grid.Row="1"
-                 Opacity="0.4"
-                 FontSize="20"
-                 TextColor="White"
-                 Text="Get New Quote"
-                 />
-         </Grid>
+         </ScrollView>
+         <Button 
+               Grid.Row="1"
+               Grid.Column="0"
+               Opacity="0.8"
+               FontSize="20"
+               x:Name="btnGenerateQuote"
+               Clicked="btnGenerateQuote_Clicked"
+               BackgroundColor="Transparent"
+               TextColor="White"
+               BorderColor="White"
+               BorderWidth="1"
+               Margin="5,0,5,5"
+               Text="Get New Quote"
+         />
+         <ImageButton 
+               Grid.Row="1"
+               Grid.Column="1"
+               HeightRequest="50"
+               Source="shared.svg"
+               x:Name="btnShared"
+               Clicked="btnShared_Clicked"
+               Margin="0,0,5,5"
+               Padding="6"
+               BorderColor="White"
+               CornerRadius="8"
+               BorderWidth="1"
+         />
+         
+         
       </Grid>
-   </ScrollView>
+
+   </Grid>
 </ContentPage>
