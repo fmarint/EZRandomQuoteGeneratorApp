@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RandomQuoteGenerator.MainPage">
+
+   <ScrollView >
+      <Grid BackgroundColor="Black">
+         <Grid.Background>
+            <LinearGradientBrush EndPoint="1,1" StartPoint="2,0" >
+               <GradientStopCollection>
+                  <GradientStop Offset="0" Color="blue"  />
+                  <GradientStop Offset="1" Color="LightGreen"  />
+               </GradientStopCollection>
+            </LinearGradientBrush>
+         </Grid.Background>
+         <Grid Margin="25" RowDefinitions="0.8*,0.2*" >
+            <Label
+            FontSize="35"
+            HorizontalTextAlignment="Center"
+            TextColor="White"
+            FontFamily="PacificoRegular"
+            VerticalOptions="Center"
+            Text="when you don’t create things, you become defined by your tastes rather than ability. your tastes only narrow  exclude people. so create. - Why The Lucky Stiff"
+            />
+            <Button Grid.Row="1"
+                 Opacity="0.4"
+                 FontSize="20"
+                 TextColor="White"
+                 Text="Get New Quote"
+                 />
+         </Grid>
+      </Grid>
+   </ScrollView>
+</ContentPage>
